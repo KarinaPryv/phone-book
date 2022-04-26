@@ -1,0 +1,10 @@
+<h2>My phone book!</h2>
+<form>
+    <div class="d-flex justify-content-between">
+        <input type="text" name="search-field" placeholder="search text goes here" [(ngModel)]="search">
+        <input type="submit" value="add phone" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            (click)="addContact()">
+    </div>
+</form>
+<app-contacts-table [search]="search"></app-contacts-table>
+<app-modal-add-contact></app-modal-add-contact>

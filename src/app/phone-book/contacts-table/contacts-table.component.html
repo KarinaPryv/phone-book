@@ -1,0 +1,39 @@
+<table>
+    <thead>
+        <tr class="header">
+            <th>
+                <a href="#" (click)="isSortUp ? sort('up', 'firstName') : sort('down', 'firstName')">First name</a>
+                <div *ngIf="isSortFirstName">
+                    <i *ngIf="isSortUp" class="fa-solid fa-caret-up up"></i>
+                    <i *ngIf="!isSortUp" class="fa-solid fa-caret-down down"></i>
+                </div>
+            </th>
+            <th>
+                <a href="#" (click)="isSortUp ? sort('up', 'lastName') : sort('down', 'lastName')">Last name</a>
+                <div *ngIf="isSortLastName">
+                    <i *ngIf="isSortUp" class="fa-solid fa-caret-up up"></i>
+                    <i *ngIf="!isSortUp" class="fa-solid fa-caret-down down"></i>
+                </div>
+            </th>
+            <th>
+                <a href="#" (click)="isSortUp ? sort('up', 'number') : sort('down', 'number')">Number</a>
+                <div *ngIf="isSortNumber">
+                    <i *ngIf="isSortUp" class="fa-solid fa-caret-up up"></i>
+                    <i *ngIf="!isSortUp" class="fa-solid fa-caret-down down"></i>
+                </div>
+            </th>
+            <th>edit</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody class="usersTable">
+        <tr *ngFor="let contact of contactsArr | search:search | sort:sortType:columnType; index as i">
+            <td>{{ contact.firstName }}</td>
+            <td>{{ contact.lastName }}</td>
+            <td>{{ contact.phoneNumber }}</td>
+            <td><button class="edit-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    (click)="editContact(contact, i)">Edit</button></td>
+            <td><button class="delete-btn" (click)="deleteContact(i)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

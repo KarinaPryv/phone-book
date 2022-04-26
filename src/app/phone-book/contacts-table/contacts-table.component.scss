@@ -1,0 +1,106 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 38px;
+}
+
+tr {
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    padding: 10px;
+    &:hover {
+        background-color: rgba(226, 222, 222, 0.661);
+    }
+}
+
+.header:hover {
+    background-color: rgb(251, 250, 250);
+}
+
+th, td {
+    text-align: center;
+    width: 20%;
+}
+
+th {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button, input[type=button] {
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+    &:disabled {
+        cursor: auto;
+    }
+}
+
+input[type=text] {
+    width: 170px;
+    height: 34px;
+    border: 1px solid rgb(196, 195, 195);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.edit-btn {
+    background-color: gold;
+    width: 60px;
+    &:hover {
+        background-color: rgb(243, 179, 1);
+    }
+    &:disabled {
+        color: black;
+        background-color: gold;
+    }
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    width: 80px;
+    &:hover {
+        background-color: rgb(173, 19, 50);
+    }
+    &:disabled {
+        background-color: rgba(247, 0, 0, 0.56);
+    }
+}
+
+.save-btn {
+    width: 60px;
+    background-color: rgb(49, 192, 61);
+    color: white;
+    &:hover {
+        background-color: rgb(42, 169, 53);
+    }
+}
+
+i {
+    font-size: 24px;
+    position: absolute;
+    top: 30%;
+    margin-left: 5px;
+    right: 35px;
+}
+
+.up {
+    top: 30%;
+}
+
+.down {
+    top: 25%
+}

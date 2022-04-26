@@ -1,0 +1,26 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"
+                    [textContent]="editStatus ? 'Edit contact' : 'Add contact'"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #contactForm="ngForm"
+                    (ngSubmit)="editStatus ? saveEditedContact() : addNewContact()">
+                    <input type="text" placeholder="first name goes here" name="firstName"
+                        [(ngModel)]="contactModel.firstName" required>
+                    <input type="text" placeholder="second name goes here" name="lastName"
+                        [(ngModel)]="contactModel.lastName" required>
+                    <input type="text" placeholder="phone number goes here" name="phoneNumber"
+                        [(ngModel)]="contactModel.phoneNumber" required>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                            [disabled]="!contactForm.form.valid">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
